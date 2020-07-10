@@ -9,6 +9,17 @@ const conf = convict({
     default: '',
     env: 'S3_BUCKET'
   },
+  /*   s3_endpoint: {
+    format: String,
+    default: '',
+    env: 'S3_ENDPOINT'
+  },
+  s3_use_path_style_endpoint: {
+    format: Boolean,
+    default: false,
+    env: 'S3_USE_PATH_STYLE_ENDPOINT'
+  },  */
+
   gcs_bucket: {
     format: String,
     default: '',
@@ -16,7 +27,7 @@ const conf = convict({
   },
   expire_times_seconds: {
     format: Array,
-    default: [300, 3600, 86400, 604800],
+    default: [600, 3600, 86400, 604800],
     env: 'EXPIRE_TIMES_SECONDS'
   },
   default_expire_seconds: {
@@ -46,7 +57,7 @@ const conf = convict({
   },
   anon_max_downloads: {
     format: Number,
-    default: 5,
+    default: 3,
     env: 'ANON_MAX_DOWNLOADS'
   },
   max_files_per_archive: {

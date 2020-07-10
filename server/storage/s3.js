@@ -1,4 +1,18 @@
 const AWS = require('aws-sdk');
+
+const config = {};
+if (typeof process.env.AWS_S3_ENDPOINT !== 'undefined') {
+  config['endpoint'] = process.env.AWS_S3_ENDPOINT;
+}
+if (typeof process.env.AWS_S3_USE_PATH_STYLE_ENDPOINT !== 'undefined') {
+  config['s3ForcePathStyle'] =
+    process.env.AWS_S3_USE_PATH_STYLE_ENDPOINT == 'true' ? true : false;
+}
+if (typeof process.env.AWS_S3_SIGNATURE_VERSION !== 'undefined') {
+  config['signatureVersion'] = process.env.AWS_S3_SIGNATURE_VERSION;
+}
+AWS.config.update(config);
+
 const s3 = new AWS.S3();
 
 class S3Storage {

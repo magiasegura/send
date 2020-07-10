@@ -47,6 +47,7 @@ module.exports = function(app) {
           ],
           imgSrc: [
             "'self'",
+            'data:',
             'https://*.dev.lcip.org',
             'https://firefoxusercontent.com',
             'https://secure.gravatar.com'

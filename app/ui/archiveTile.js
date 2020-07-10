@@ -248,6 +248,7 @@ module.exports = function(state, emit, archive) {
     copyToClipboard(archive.url);
     const text = event.target.lastChild;
     text.textContent = state.translate('copiedUrl');
+    emit('displayQRCode', archive.url);
     setTimeout(
       () => (text.textContent = state.translate('copyLinkButton')),
       1000
@@ -267,7 +268,7 @@ module.exports = function(state, emit, archive) {
       try {
         await navigator.share({
           title: state.translate('-send-brand'),
-          text: `Download "${archive.name}" with Firefox Send: simple, safe file sharing`,
+          text: `Download "${archive.name}" with IDTBX Send: simple, safe file sharing`,
           //state.translate('shareMessage', { name }),
           url: archive.url
         });
