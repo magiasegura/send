@@ -6,8 +6,8 @@ encryptingFile = Criptografando…
 decryptingFile = Descriptografando…
 downloadCount =
     { $num ->
-        [one] 1 download
-       *[other] { $num } downloads
+        [one] baixar 1 vez
+       *[other] baixar { $num } vezes
     }
 timespanHours =
     { $num ->
@@ -57,7 +57,7 @@ introTitle = Compartilhamento de arquivos fácil e privativo
 introDescription = O { -send-brand } permite compartilhar arquivos com criptografia de ponta a ponta através de um link que expira automaticamente. Assim você pode proteger o que compartilha e ter certeza que suas coisas não ficarão online para sempre.
 notifyUploadEncryptDone = Seu arquivo foi criptografado e está pronto para ser enviado
 # downloadCount is from the downloadCount string and timespan is a timespanMinutes string. ex. 'Expires after 2 downloads or 25 minutes'
-archiveExpiryInfo = Expirar após { $downloadCount } ou { $timespan }
+archiveExpiryInfo = Expira após { $downloadCount } ou { $timespan }
 timespanMinutes =
     { $num ->
         [one] 1 minuto
